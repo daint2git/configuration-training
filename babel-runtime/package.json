@@ -1,0 +1,29 @@
+{
+  "name": "babel-runtime",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "daint2",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.5.5",
+    "@babel/runtime-corejs2": "^7.5.5",
+    "@babel/runtime-corejs3": "^7.5.5",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "scripts": {
+    "build": "yarn build:runtime && yarn build:runtime-corejs2 && yarn build:runtime-corejs3 && yarn build:no-runtime",
+    "build:runtime": "babel --config-file ./.babelrc-with-runtime-plugin.js --out-file output-with-runtime-plugin.js  input.js",
+    "build:runtime-corejs2": "babel --config-file ./.babelrc-with-runtime-corejs2-plugin.js --out-file output-with-runtime-corejs2-plugin.js  input.js",
+    "build:runtime-corejs3": "babel --config-file ./.babelrc-with-runtime-corejs3-plugin.js --out-file output-with-runtime-corejs3-plugin.js  input.js",
+    "build:no-runtime": "babel --config-file ./.babelrc-without-runtime-plugin.js --out-file output-without-runtime-plugin.js input.js"
+  }
+}
