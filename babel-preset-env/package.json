@@ -8,15 +8,20 @@
     "@babel/core": "^7.5.5",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
-    "@babel/preset-react": "^7.0.0"
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.7"
   },
   "dependencies": {
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   },
   "scripts": {
-    "build": "yarn build:modules-false && yarn build:modules-commonjs",
+    "build": "yarn build:modules-false && yarn build:modules-commonjs && yarn build:webpack:development && yarn build:webpack:production",
     "build:modules-false": "babel --config-file ./.babelrc-with-modules-false.js --out-file output-with-modules-false.js  input.js",
-    "build:modules-commonjs": "babel --config-file ./.babelrc-with-modules-commonjs.js --out-file output-with-modules-commonjs.js  input.js"
+    "build:modules-commonjs": "babel --config-file ./.babelrc-with-modules-commonjs.js --out-file output-with-modules-commonjs.js  input.js",
+    "build:webpack:development": "webpack --mode=development",
+    "build:webpack:production": "webpack --mode=production"
   }
 }
