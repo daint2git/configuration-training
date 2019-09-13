@@ -1,8 +1,6 @@
 {
   "name": "babel-preset-env",
   "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
   "devDependencies": {
     "@babel/cli": "^7.5.5",
     "@babel/core": "^7.5.5",
@@ -18,9 +16,12 @@
     "react-dom": "^16.9.0"
   },
   "scripts": {
-    "build": "yarn build:modules-false && yarn build:modules-commonjs && yarn build:webpack:development && yarn build:webpack:production",
+    "build": "yarn build:modules-false && yarn build:modules-commonjs && yarn build:useBuiltIns-usage && yarn build:useBuiltIns-usage-target-ie11 && yarn build:useBuiltIns-usage-target-chrome72 && yarn build:webpack:development && yarn build:webpack:production",
     "build:modules-false": "babel --config-file ./.babelrc-with-modules-false.js --out-file output-with-modules-false.js  input.js",
     "build:modules-commonjs": "babel --config-file ./.babelrc-with-modules-commonjs.js --out-file output-with-modules-commonjs.js  input.js",
+    "build:useBuiltIns-usage": "babel --config-file ./.babelrc-with-useBuiltIns-usage.js --out-file output-with-useBuiltIns-usage.js  input.js",
+    "build:useBuiltIns-usage-target-ie11": "babel --config-file ./.babelrc-with-useBuiltIns-usage-target-ie11.js --out-file output-with-useBuiltIns-usage-target-ie11.js  input.js",
+    "build:useBuiltIns-usage-target-chrome72": "babel --config-file ./.babelrc-with-useBuiltIns-usage-target-chrome72.js --out-file output-with-useBuiltIns-usage-target-chrome72.js  input.js",
     "build:webpack:development": "webpack --mode=development",
     "build:webpack:production": "webpack --mode=production"
   }

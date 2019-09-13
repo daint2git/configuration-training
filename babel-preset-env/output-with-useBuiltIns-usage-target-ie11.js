@@ -1,4 +1,71 @@
+"use strict";
+
+require("core-js/modules/es.symbol");
+
+require("core-js/modules/es.symbol.description");
+
+require("core-js/modules/es.symbol.async-iterator");
+
+require("core-js/modules/es.symbol.iterator");
+
+require("core-js/modules/es.array.concat");
+
+require("core-js/modules/es.array.filter");
+
+require("core-js/modules/es.array.from");
+
+require("core-js/modules/es.array.includes");
+
+require("core-js/modules/es.array.iterator");
+
+require("core-js/modules/es.function.name");
+
+require("core-js/modules/es.map");
+
+require("core-js/modules/es.object.get-own-property-descriptor");
+
+require("core-js/modules/es.object.get-own-property-descriptors");
+
+require("core-js/modules/es.object.get-prototype-of");
+
+require("core-js/modules/es.object.keys");
+
+require("core-js/modules/es.object.to-string");
+
+require("core-js/modules/es.promise");
+
+require("core-js/modules/es.set");
+
+require("core-js/modules/es.string.includes");
+
+require("core-js/modules/es.string.iterator");
+
+require("core-js/modules/es.weak-map");
+
+require("core-js/modules/es.weak-set");
+
+require("core-js/modules/web.dom-collections.for-each");
+
+require("core-js/modules/web.dom-collections.iterator");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.handleGenerator = handleGenerator;
+exports.handleAsyncAwaitGenerator = handleAsyncAwaitGenerator;
+exports.default = exports.rest = exports.name = exports.cloneObject = exports.myObject = exports.isExistedInString = exports.isExistedInArray = exports.myArray = exports.myWeakSet = exports.mySet = exports.myWeekMap = exports.myMap = exports.handleAsyncAwait = exports.handlePromise = void 0;
+
+require("regenerator-runtime/runtime");
+
+var _react = _interopRequireDefault(require("react"));
+
+var _input = _interopRequireDefault(require("./input2"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -38,26 +105,27 @@ function _awaitAsyncGenerator(value) { return new _AwaitValue(value); }
 
 function _wrapAsyncGenerator(fn) { return function () { return new _AsyncGenerator(fn.apply(this, arguments)); }; }
 
-function _AsyncGenerator(gen) { var front, back; function send(key, arg) { return new Promise(function (resolve, reject) { var request = { key: key, arg: arg, resolve: resolve, reject: reject, next: null }; if (back) { back = back.next = request; } else { front = back = request; resume(key, arg); } }); } function resume(key, arg) { try { var result = gen[key](arg); var value = result.value; var wrappedAwait = value instanceof _AwaitValue; Promise.resolve(wrappedAwait ? value.wrapped : value).then(function (arg) { if (wrappedAwait) { resume("next", arg); return; } settle(result.done ? "return" : "normal", arg); }, function (err) { resume("throw", err); }); } catch (err) { settle("throw", err); } } function settle(type, value) { switch (type) { case "return": front.resolve({ value: value, done: true }); break; case "throw": front.reject(value); break; default: front.resolve({ value: value, done: false }); break; } front = front.next; if (front) { resume(front.key, front.arg); } else { back = null; } } this._invoke = send; if (typeof gen["return"] !== "function") { this["return"] = undefined; } }
+function _AsyncGenerator(gen) { var front, back; function send(key, arg) { return new Promise(function (resolve, reject) { var request = { key: key, arg: arg, resolve: resolve, reject: reject, next: null }; if (back) { back = back.next = request; } else { front = back = request; resume(key, arg); } }); } function resume(key, arg) { try { var result = gen[key](arg); var value = result.value; var wrappedAwait = value instanceof _AwaitValue; Promise.resolve(wrappedAwait ? value.wrapped : value).then(function (arg) { if (wrappedAwait) { resume("next", arg); return; } settle(result.done ? "return" : "normal", arg); }, function (err) { resume("throw", err); }); } catch (err) { settle("throw", err); } } function settle(type, value) { switch (type) { case "return": front.resolve({ value: value, done: true }); break; case "throw": front.reject(value); break; default: front.resolve({ value: value, done: false }); break; } front = front.next; if (front) { resume(front.key, front.arg); } else { back = null; } } this._invoke = send; if (typeof gen.return !== "function") { this.return = undefined; } }
 
 if (typeof Symbol === "function" && Symbol.asyncIterator) { _AsyncGenerator.prototype[Symbol.asyncIterator] = function () { return this; }; }
 
 _AsyncGenerator.prototype.next = function (arg) { return this._invoke("next", arg); };
 
-_AsyncGenerator.prototype["throw"] = function (arg) { return this._invoke("throw", arg); };
+_AsyncGenerator.prototype.throw = function (arg) { return this._invoke("throw", arg); };
 
-_AsyncGenerator.prototype["return"] = function (arg) { return this._invoke("return", arg); };
+_AsyncGenerator.prototype.return = function (arg) { return this._invoke("return", arg); };
 
 function _AwaitValue(value) { this.wrapped = value; }
 
-import React from 'react';
-import Button from './input2';
-export var handlePromise = function handlePromise() {
+var handlePromise = function handlePromise() {
   return new Promise(function (resolve, reject) {
     resolve('hi');
   });
 };
-export var handleAsyncAwait =
+
+exports.handlePromise = handlePromise;
+
+var handleAsyncAwait =
 /*#__PURE__*/
 function () {
   var _ref = _asyncToGenerator(
@@ -87,7 +155,10 @@ function () {
     return _ref.apply(this, arguments);
   };
 }();
-export function handleGenerator() {
+
+exports.handleAsyncAwait = handleAsyncAwait;
+
+function handleGenerator() {
   return regeneratorRuntime.wrap(function handleGenerator$(_context2) {
     while (1) {
       switch (_context2.prev = _context2.next) {
@@ -106,7 +177,8 @@ export function handleGenerator() {
     }
   }, _marked);
 }
-export function handleAsyncAwaitGenerator() {
+
+function handleAsyncAwaitGenerator() {
   return _handleAsyncAwaitGenerator.apply(this, arguments);
 }
 
@@ -135,25 +207,37 @@ function _handleAsyncAwaitGenerator() {
   return _handleAsyncAwaitGenerator.apply(this, arguments);
 }
 
-export var myMap = new Map();
-export var myWeekMap = new WeakMap();
-export var mySet = new Set();
-export var myWeakSet = new WeakSet();
-export var myArray = Array.from([1, 2, 3], function (x) {
+var myMap = new Map();
+exports.myMap = myMap;
+var myWeekMap = new WeakMap();
+exports.myWeekMap = myWeekMap;
+var mySet = new Set();
+exports.mySet = mySet;
+var myWeakSet = new WeakSet();
+exports.myWeakSet = myWeakSet;
+var myArray = Array.from([1, 2, 3], function (x) {
   return x + x;
 });
-export var isExistedInArray = ['a', 'b'].includes('a');
-export var isExistedInString = 'ab'.includes('a');
-export var myObject = {
+exports.myArray = myArray;
+var isExistedInArray = ['a', 'b'].includes('a');
+exports.isExistedInArray = isExistedInArray;
+var isExistedInString = 'ab'.includes('a');
+exports.isExistedInString = isExistedInString;
+var myObject = {
   name: 'Dai',
   age: 26
 };
-export var cloneObject = _objectSpread({}, myObject);
+exports.myObject = myObject;
+
+var cloneObject = _objectSpread({}, myObject);
+
+exports.cloneObject = cloneObject;
 
 var name = myObject.name,
     rest = _objectWithoutProperties(myObject, ["name"]);
 
-export { name, rest };
+exports.rest = rest;
+exports.name = name;
 
 var Counter =
 /*#__PURE__*/
@@ -204,10 +288,12 @@ function (_React$Component) {
     value: function loadComponent() {
       var _this2 = this;
 
-      import('./input3').then(function (Text) {
+      Promise.resolve().then(function () {
+        return _interopRequireWildcard(require('./input3'));
+      }).then(function (Text) {
         _this2.setState(function (prevState) {
           return _objectSpread({}, prevState, {
-            Text: Text["default"]
+            Text: Text.default
           });
         });
       });
@@ -215,15 +301,16 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return React.createElement("div", null, React.createElement(Button, {
+      return _react.default.createElement("div", null, _react.default.createElement(_input.default, {
         onClick: this.handleIncrement
-      }, "+"), React.createElement(Button, {
+      }, "+"), _react.default.createElement(_input.default, {
         onClick: this.handleDecrement
-      }, "-"), this.state.Text && React.createElement(Text, null, this.state.count));
+      }, "-"), this.state.Text && _react.default.createElement(Text, null, this.state.count));
     }
   }]);
 
   return Counter;
-}(React.Component);
+}(_react.default.Component);
 
-export default Counter;
+var _default = Counter;
+exports.default = _default;

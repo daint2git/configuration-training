@@ -12,9 +12,23 @@ export const handleAsyncAwait = async () => {
   return greeting
 }
 
+export function* handleGenerator() {
+  yield 1
+  yield 2
+}
+
+export async function* handleAsyncAwaitGenerator() {
+  await 1
+  yield 2
+}
+
+export const myMap = new Map()
+
 export const myWeekMap = new WeakMap()
 
 export const mySet = new Set()
+
+export const myWeakSet = new WeakSet()
 
 export const myArray = Array.from([1, 2, 3], x => x + x)
 
