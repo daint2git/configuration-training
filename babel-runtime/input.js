@@ -2,15 +2,38 @@ import React from 'react'
 import Button from './input2'
 import Text from './input3'
 
-export const handlePromise = () => {
-  return new Promise((resolve, reject) => {
+export const handlePromise = () =>
+  new Promise((resolve, reject) => {
     resolve('hi')
   })
-}
 
 export const handleAsyncAwait = async () => {
   const greeting = await Promise.resolve('hi')
   return greeting
+}
+
+export async function handleAsyncAwait2() {
+  const greeting = await Promise.resolve('hi')
+  return greeting
+}
+
+export function* handleGenerator() {
+  yield 1
+  yield 2
+}
+
+export async function* handleGeneratorAsyncAwait() {
+  await 1
+  yield 2
+}
+
+export function parseJSON(value) {
+  try {
+    const obj = JSON.parse(value)
+    return obj
+  } catch {
+    throw new Error('Can not parse json !')
+  }
 }
 
 export const myWeekMap = new WeakMap()

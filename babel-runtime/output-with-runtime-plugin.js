@@ -5,6 +5,10 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.handleAsyncAwait2 = handleAsyncAwait2;
+exports.handleGenerator = handleGenerator;
+exports.handleGeneratorAsyncAwait = handleGeneratorAsyncAwait;
+exports.parseJSON = parseJSON;
 exports["default"] = exports.isExistedInString = exports.isExistedInArray = exports.myArray = exports.mySet = exports.myWeekMap = exports.handleAsyncAwait = exports.handlePromise = void 0;
 
 var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
@@ -25,11 +29,19 @@ var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"))
 
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 
+var _awaitAsyncGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/awaitAsyncGenerator"));
+
+var _wrapAsyncGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/wrapAsyncGenerator"));
+
 var _react = _interopRequireDefault(require("react"));
 
 var _input = _interopRequireDefault(require("./input2"));
 
 var _input2 = _interopRequireDefault(require("./input3"));
+
+var _marked =
+/*#__PURE__*/
+_regenerator["default"].mark(handleGenerator);
 
 var handlePromise = function handlePromise() {
   return new Promise(function (resolve, reject) {
@@ -71,6 +83,95 @@ function () {
 }();
 
 exports.handleAsyncAwait = handleAsyncAwait;
+
+function handleAsyncAwait2() {
+  return _handleAsyncAwait.apply(this, arguments);
+}
+
+function _handleAsyncAwait() {
+  _handleAsyncAwait = (0, _asyncToGenerator2["default"])(
+  /*#__PURE__*/
+  _regenerator["default"].mark(function _callee3() {
+    var greeting;
+    return _regenerator["default"].wrap(function _callee3$(_context4) {
+      while (1) {
+        switch (_context4.prev = _context4.next) {
+          case 0:
+            _context4.next = 2;
+            return Promise.resolve('hi');
+
+          case 2:
+            greeting = _context4.sent;
+            return _context4.abrupt("return", greeting);
+
+          case 4:
+          case "end":
+            return _context4.stop();
+        }
+      }
+    }, _callee3);
+  }));
+  return _handleAsyncAwait.apply(this, arguments);
+}
+
+function handleGenerator() {
+  return _regenerator["default"].wrap(function handleGenerator$(_context2) {
+    while (1) {
+      switch (_context2.prev = _context2.next) {
+        case 0:
+          _context2.next = 2;
+          return 1;
+
+        case 2:
+          _context2.next = 4;
+          return 2;
+
+        case 4:
+        case "end":
+          return _context2.stop();
+      }
+    }
+  }, _marked);
+}
+
+function handleGeneratorAsyncAwait() {
+  return _handleGeneratorAsyncAwait.apply(this, arguments);
+}
+
+function _handleGeneratorAsyncAwait() {
+  _handleGeneratorAsyncAwait = (0, _wrapAsyncGenerator2["default"])(
+  /*#__PURE__*/
+  _regenerator["default"].mark(function _callee2() {
+    return _regenerator["default"].wrap(function _callee2$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            _context3.next = 2;
+            return (0, _awaitAsyncGenerator2["default"])(1);
+
+          case 2:
+            _context3.next = 4;
+            return 2;
+
+          case 4:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    }, _callee2);
+  }));
+  return _handleGeneratorAsyncAwait.apply(this, arguments);
+}
+
+function parseJSON(value) {
+  try {
+    var obj = JSON.parse(value);
+    return obj;
+  } catch (_unused) {
+    throw new Error('Can not parse json !');
+  }
+}
+
 var myWeekMap = new WeakMap();
 exports.myWeekMap = myWeekMap;
 var mySet = new Set();

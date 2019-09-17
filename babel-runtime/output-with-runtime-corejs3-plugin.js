@@ -8,6 +8,10 @@ _Object$defineProperty(exports, "__esModule", {
   value: true
 });
 
+exports.handleAsyncAwait2 = handleAsyncAwait2;
+exports.handleGenerator = handleGenerator;
+exports.handleGeneratorAsyncAwait = handleGeneratorAsyncAwait;
+exports.parseJSON = parseJSON;
 exports["default"] = exports.isExistedInString = exports.isExistedInArray = exports.myArray = exports.mySet = exports.myWeekMap = exports.handleAsyncAwait = exports.handlePromise = void 0;
 
 var _concat = _interopRequireDefault(require("@babel/runtime-corejs3/core-js-stable/instance/concat"));
@@ -40,13 +44,21 @@ var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime-corejs3/
 
 var _promise = _interopRequireDefault(require("@babel/runtime-corejs3/core-js-stable/promise"));
 
+var _awaitAsyncGenerator2 = _interopRequireDefault(require("@babel/runtime-corejs3/helpers/awaitAsyncGenerator"));
+
+var _wrapAsyncGenerator2 = _interopRequireDefault(require("@babel/runtime-corejs3/helpers/wrapAsyncGenerator"));
+
 var _react = _interopRequireDefault(require("react"));
 
 var _input = _interopRequireDefault(require("./input2"));
 
 var _input2 = _interopRequireDefault(require("./input3"));
 
-var _context2, _context3;
+var _context4, _context5;
+
+var _marked =
+/*#__PURE__*/
+_regenerator["default"].mark(handleGenerator);
 
 var handlePromise = function handlePromise() {
   return new _promise["default"](function (resolve, reject) {
@@ -88,6 +100,95 @@ function () {
 }();
 
 exports.handleAsyncAwait = handleAsyncAwait;
+
+function handleAsyncAwait2() {
+  return _handleAsyncAwait.apply(this, arguments);
+}
+
+function _handleAsyncAwait() {
+  _handleAsyncAwait = (0, _asyncToGenerator2["default"])(
+  /*#__PURE__*/
+  _regenerator["default"].mark(function _callee3() {
+    var greeting;
+    return _regenerator["default"].wrap(function _callee3$(_context7) {
+      while (1) {
+        switch (_context7.prev = _context7.next) {
+          case 0:
+            _context7.next = 2;
+            return _promise["default"].resolve('hi');
+
+          case 2:
+            greeting = _context7.sent;
+            return _context7.abrupt("return", greeting);
+
+          case 4:
+          case "end":
+            return _context7.stop();
+        }
+      }
+    }, _callee3);
+  }));
+  return _handleAsyncAwait.apply(this, arguments);
+}
+
+function handleGenerator() {
+  return _regenerator["default"].wrap(function handleGenerator$(_context2) {
+    while (1) {
+      switch (_context2.prev = _context2.next) {
+        case 0:
+          _context2.next = 2;
+          return 1;
+
+        case 2:
+          _context2.next = 4;
+          return 2;
+
+        case 4:
+        case "end":
+          return _context2.stop();
+      }
+    }
+  }, _marked);
+}
+
+function handleGeneratorAsyncAwait() {
+  return _handleGeneratorAsyncAwait.apply(this, arguments);
+}
+
+function _handleGeneratorAsyncAwait() {
+  _handleGeneratorAsyncAwait = (0, _wrapAsyncGenerator2["default"])(
+  /*#__PURE__*/
+  _regenerator["default"].mark(function _callee2() {
+    return _regenerator["default"].wrap(function _callee2$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            _context3.next = 2;
+            return (0, _awaitAsyncGenerator2["default"])(1);
+
+          case 2:
+            _context3.next = 4;
+            return 2;
+
+          case 4:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    }, _callee2);
+  }));
+  return _handleGeneratorAsyncAwait.apply(this, arguments);
+}
+
+function parseJSON(value) {
+  try {
+    var obj = JSON.parse(value);
+    return obj;
+  } catch (_unused) {
+    throw new Error('Can not parse json !');
+  }
+}
+
 var myWeekMap = new _weakMap["default"]();
 exports.myWeekMap = myWeekMap;
 var mySet = new _set["default"]();
@@ -96,9 +197,9 @@ var myArray = (0, _from["default"])([1, 2, 3], function (x) {
   return x + x;
 });
 exports.myArray = myArray;
-var isExistedInArray = (0, _includes["default"])(_context2 = ['a', 'b']).call(_context2, 'a');
+var isExistedInArray = (0, _includes["default"])(_context4 = ['a', 'b']).call(_context4, 'a');
 exports.isExistedInArray = isExistedInArray;
-var isExistedInString = (0, _includes["default"])(_context3 = 'ab').call(_context3, 'a');
+var isExistedInString = (0, _includes["default"])(_context5 = 'ab').call(_context5, 'a');
 exports.isExistedInString = isExistedInString;
 
 var Counter =
@@ -107,7 +208,7 @@ function (_React$Component) {
   (0, _inherits2["default"])(Counter, _React$Component);
 
   function Counter() {
-    var _getPrototypeOf2, _context4;
+    var _getPrototypeOf2, _context6;
 
     var _this;
 
@@ -117,7 +218,7 @@ function (_React$Component) {
       args[_key] = arguments[_key];
     }
 
-    _this = (0, _possibleConstructorReturn2["default"])(this, (_getPrototypeOf2 = (0, _getPrototypeOf3["default"])(Counter)).call.apply(_getPrototypeOf2, (0, _concat["default"])(_context4 = [this]).call(_context4, args)));
+    _this = (0, _possibleConstructorReturn2["default"])(this, (_getPrototypeOf2 = (0, _getPrototypeOf3["default"])(Counter)).call.apply(_getPrototypeOf2, (0, _concat["default"])(_context6 = [this]).call(_context6, args)));
     (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "state", {
       count: 0
     });

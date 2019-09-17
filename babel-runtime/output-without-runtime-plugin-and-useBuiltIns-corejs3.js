@@ -1,5 +1,43 @@
 "use strict";
 
+require("core-js/modules/es.symbol");
+
+require("core-js/modules/es.symbol.description");
+
+require("core-js/modules/es.symbol.async-iterator");
+
+require("core-js/modules/es.symbol.iterator");
+
+require("core-js/modules/es.array.concat");
+
+require("core-js/modules/es.array.from");
+
+require("core-js/modules/es.array.includes");
+
+require("core-js/modules/es.array.iterator");
+
+require("core-js/modules/es.object.create");
+
+require("core-js/modules/es.object.define-property");
+
+require("core-js/modules/es.object.get-prototype-of");
+
+require("core-js/modules/es.object.set-prototype-of");
+
+require("core-js/modules/es.object.to-string");
+
+require("core-js/modules/es.promise");
+
+require("core-js/modules/es.set");
+
+require("core-js/modules/es.string.includes");
+
+require("core-js/modules/es.string.iterator");
+
+require("core-js/modules/es.weak-map");
+
+require("core-js/modules/web.dom-collections.iterator");
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -8,6 +46,8 @@ exports.handleGenerator = handleGenerator;
 exports.handleGeneratorAsyncAwait = handleGeneratorAsyncAwait;
 exports.parseJSON = parseJSON;
 exports["default"] = exports.isExistedInString = exports.isExistedInArray = exports.myArray = exports.mySet = exports.myWeekMap = exports.handleAsyncAwait = exports.handlePromise = void 0;
+
+require("regenerator-runtime/runtime");
 
 var _react = _interopRequireDefault(require("react"));
 

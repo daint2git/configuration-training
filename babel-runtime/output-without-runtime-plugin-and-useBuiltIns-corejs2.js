@@ -9,6 +9,38 @@ exports.handleGeneratorAsyncAwait = handleGeneratorAsyncAwait;
 exports.parseJSON = parseJSON;
 exports["default"] = exports.isExistedInString = exports.isExistedInArray = exports.myArray = exports.mySet = exports.myWeekMap = exports.handleAsyncAwait = exports.handlePromise = void 0;
 
+require("core-js/modules/es6.object.define-property");
+
+require("core-js/modules/es6.object.create");
+
+require("core-js/modules/es6.object.set-prototype-of");
+
+require("core-js/modules/es7.array.includes");
+
+require("core-js/modules/es6.string.includes");
+
+require("core-js/modules/es6.array.from");
+
+require("core-js/modules/es6.set");
+
+require("core-js/modules/web.dom.iterable");
+
+require("core-js/modules/es6.array.iterator");
+
+require("core-js/modules/es6.string.iterator");
+
+require("core-js/modules/es6.weak-map");
+
+require("regenerator-runtime/runtime");
+
+require("core-js/modules/es7.symbol.async-iterator");
+
+require("core-js/modules/es6.symbol");
+
+require("core-js/modules/es6.promise");
+
+require("core-js/modules/es6.object.to-string");
+
 var _react = _interopRequireDefault(require("react"));
 
 var _input = _interopRequireDefault(require("./input2"));
