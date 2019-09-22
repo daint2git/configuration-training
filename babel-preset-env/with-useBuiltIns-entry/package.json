@@ -1,0 +1,29 @@
+{
+  "name": "with-usebuiltins-entry",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0"
+  },
+  "dependencies": {
+    "core-js": "3",
+    "regenerator-runtime": "^0.13.3"
+  },
+  "scripts": {
+    "build": "yarn build:default && yarn build:corejs-2 && yarn build:corejs-3 && yarn build:corejs-3-targets-esmodules && yarn build:corejs-3-targets-node && yarn build:corejs-3-targets-ie11 && yarn build:corejs-3-targets-chrome58 && yarn build:corejs-3-targets-last1version && yarn build:corejs-3-targets-last1version-1-percent && yarn build:corejs-3-targets-material-ui && yarn build:corejs-3-targets-bootstrap",
+    "build:default": "babel --config-file ./.babelrc-default.js --out-file output-default.js input.js",
+    "build:corejs-2": "babel --config-file ./.babelrc-corejs-2.js --out-file output-corejs-2.js input.js",
+    "build:corejs-3": "babel --config-file ./.babelrc-corejs-3.js --out-file output-corejs-3.js input.js",
+    "build:corejs-3-targets-esmodules": "babel --config-file ./.babelrc-corejs-3-targets-esmodules.js --out-file output-corejs-3-targets-esmodules.js input.js",
+    "build:corejs-3-targets-node": "babel --config-file ./.babelrc-corejs-3-targets-node.js --out-file output-corejs-3-targets-node.js input.js",
+    "build:corejs-3-targets-ie11": "babel --config-file ./.babelrc-corejs-3-targets-ie11.js --out-file output-corejs-3-targets-ie11.js input.js",
+    "build:corejs-3-targets-chrome58": "babel --config-file ./.babelrc-corejs-3-targets-chrome58.js --out-file output-corejs-3-targets-chrome58.js input.js",
+    "build:corejs-3-targets-last1version": "babel --config-file ./.babelrc-corejs-3-targets-last1version.js --out-file output-corejs-3-targets-last1version.js input.js",
+    "build:corejs-3-targets-last1version-1-percent": "babel --config-file ./.babelrc-corejs-3-targets-last1version-1-percent.js --out-file output-corejs-3-targets-last1version-1-percent.js input.js",
+    "build:corejs-3-targets-material-ui": "babel --config-file ./.babelrc-corejs-3-targets-material-ui.js --out-file output-corejs-3-targets-material-ui.js input.js",
+    "build:corejs-3-targets-bootstrap": "babel --config-file ./.babelrc-corejs-3-targets-bootstrap.js --out-file output-corejs-3-targets-bootstrap.js input.js"
+  }
+}

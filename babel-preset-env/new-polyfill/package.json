@@ -1,0 +1,20 @@
+{
+  "name": "polyfill",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0"
+  },
+  "dependencies": {
+    "core-js": "^3.2.1",
+    "regenerator-runtime": "^0.13.3"
+  },
+  "scripts": {
+    "build": "yarn build:default && yarn build:targets-ie11",
+    "build:default": "babel --config-file ./.babelrc-default.js --out-file output-default.js input.js",
+    "build:targets-ie11": "babel --config-file ./.babelrc-targets-ie11.js --out-file output-targets-ie11.js input.js"
+  }
+}
