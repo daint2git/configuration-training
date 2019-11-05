@@ -1,0 +1,38 @@
+{
+  "presets": ["@babel/preset-env", "@babel/preset-react"],
+  "env": {
+    "remove": {
+      "plugins": [
+        [
+          "transform-react-remove-prop-types",
+          {
+            "removeImport": true,
+            "ignoreFilenames": ["node_modules"]
+          }
+        ]
+      ]
+    },
+    "wrap": {
+      "plugins": [
+        [
+          "transform-react-remove-prop-types",
+          {
+            "mode": "wrap",
+            "ignoreFilenames": ["node_modules"]
+          }
+        ]
+      ]
+    },
+    "unsafe-wrap": {
+      "plugins": [
+        [
+          "transform-react-remove-prop-types",
+          {
+            "mode": "unsafe-wrap",
+            "ignoreFilenames": ["node_modules"]
+          }
+        ]
+      ]
+    }
+  }
+}

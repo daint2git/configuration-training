@@ -1,0 +1,25 @@
+{
+  "name": "babel-plugin-transform-react-remove-prop-types",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/preset-react": "^7.7.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "cross-env": "^6.0.3"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0"
+  },
+  "scripts": {
+    "build": "yarn build:remove && yarn build:wrap && yarn build:unsafe-wrap",
+    "build:remove": "cross-env NODE_ENV=remove babel src -d lib/remove",
+    "build:wrap": "cross-env NODE_ENV=wrap babel src -d lib/wrap",
+    "build:unsafe-wrap": "cross-env NODE_ENV=unsafe-wrap babel src -d lib/unsafe-wrap"
+  }
+}
