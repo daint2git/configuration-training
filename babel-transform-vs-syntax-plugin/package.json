@@ -1,0 +1,26 @@
+{
+  "name": "babel-transform-vs-syntax-plugin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "7.8.0",
+    "@babel/core": "7.8.0",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-dynamic-import": "7.8.0",
+    "@babel/plugin-proposal-object-rest-spread": "7.8.0",
+    "@babel/plugin-proposal-optional-chaining": "7.8.0",
+    "@babel/plugin-syntax-class-properties": "^7.8.3",
+    "@babel/plugin-syntax-dynamic-import": "7.8.0",
+    "@babel/plugin-syntax-object-rest-spread": "7.8.0",
+    "@babel/plugin-syntax-optional-chaining": "7.8.0",
+    "@babel/preset-env": "7.5.0",
+    "cross-env": "7.0.0"
+  },
+  "scripts": {
+    "build": "yarn build:default && yarn build:transform && yarn build:syntax",
+    "build:default": "cross-env NODE_ENV=default babel --config-file ./.babelrc-default.js src --out-file lib/default.js",
+    "build:transform": "cross-env NODE_ENV=transform babel --config-file ./.babelrc-transform.js src --out-file lib/transform.js",
+    "build:syntax": "cross-env NODE_ENV=syntax babel src --config-file ./.babelrc-syntax.js --out-file lib/syntax.js"
+  }
+}
