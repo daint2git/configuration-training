@@ -1,5 +1,7 @@
 "use strict";
 
+var _regeneratorRuntime2 = require("@babel/runtime/regenerator");
+
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
 Object.defineProperty(exports, "__esModule", {
@@ -9,23 +11,23 @@ exports.handleGenerator = handleGenerator;
 exports.handleAsyncAwaitGenerator = handleAsyncAwaitGenerator;
 exports["default"] = exports.isExistedInString = exports.isExistedInArray = exports.cloneObject = exports.myObject = exports.cloneArray = exports.myArray = exports.mySymbol = exports.myWeakSet = exports.mySet = exports.myWeakMap = exports.myMap = exports.handleAsyncAwait = exports.handlePromise = void 0;
 
+var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
+
 var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
 
 var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
-
-var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
-
-var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
 
 var _assertThisInitialized2 = _interopRequireDefault(require("@babel/runtime/helpers/assertThisInitialized"));
 
 var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
 
+var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
+
+var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
+
 var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
 
 var _toConsumableArray2 = _interopRequireDefault(require("@babel/runtime/helpers/toConsumableArray"));
-
-var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
 
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 
@@ -37,13 +39,23 @@ var _react = _interopRequireDefault(require("react"));
 
 var _input = _interopRequireDefault(require("./input2"));
 
+var _input2 = _interopRequireDefault(require("./input3"));
+
+var _async = require("./async");
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0, _getPrototypeOf2["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0, _getPrototypeOf2["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0, _possibleConstructorReturn2["default"])(this, result); }; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { (0, _defineProperty2["default"])(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-var _marked =
-/*#__PURE__*/
-_regenerator["default"].mark(handleGenerator);
+var _marked = /*#__PURE__*/_regeneratorRuntime2.mark(handleGenerator);
+
+(0, _async.handleAsyncAwait2)();
+(0, _async.handleGenerator2)();
+(0, _async.handleAsyncAwaitGenerator2)();
 
 var handlePromise = function handlePromise() {
   return new Promise(function (resolve) {
@@ -53,12 +65,8 @@ var handlePromise = function handlePromise() {
 
 exports.handlePromise = handlePromise;
 
-var handleAsyncAwait =
-/*#__PURE__*/
-function () {
-  var _ref = (0, _asyncToGenerator2["default"])(
-  /*#__PURE__*/
-  _regenerator["default"].mark(function _callee() {
+var handleAsyncAwait = /*#__PURE__*/function () {
+  var _ref = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee() {
     var data;
     return _regenerator["default"].wrap(function _callee$(_context) {
       while (1) {
@@ -111,9 +119,7 @@ function handleAsyncAwaitGenerator() {
 }
 
 function _handleAsyncAwaitGenerator() {
-  _handleAsyncAwaitGenerator = (0, _wrapAsyncGenerator2["default"])(
-  /*#__PURE__*/
-  _regenerator["default"].mark(function _callee2() {
+  _handleAsyncAwaitGenerator = (0, _wrapAsyncGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee2() {
     return _regenerator["default"].wrap(function _callee2$(_context3) {
       while (1) {
         switch (_context3.prev = _context3.next) {
@@ -165,16 +171,16 @@ exports.isExistedInArray = isExistedInArray;
 var isExistedInString = 'ab'.includes('a');
 exports.isExistedInString = isExistedInString;
 
-var Counter =
-/*#__PURE__*/
-function (_React$Component) {
+var Counter = /*#__PURE__*/function (_React$Component) {
   (0, _inherits2["default"])(Counter, _React$Component);
+
+  var _super = _createSuper(Counter);
 
   function Counter(props) {
     var _this;
 
     (0, _classCallCheck2["default"])(this, Counter);
-    _this = (0, _possibleConstructorReturn2["default"])(this, (0, _getPrototypeOf2["default"])(Counter).call(this, props));
+    _this = _super.call(this, props);
     (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "handleDecrement", function () {
       _this.setState(function (_ref2) {
         var count = _ref2.count;
@@ -203,11 +209,11 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return _react["default"].createElement("div", null, _react["default"].createElement(_input["default"], {
+      return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(_input["default"], {
         onClick: this.handleIncrement
-      }, "+"), _react["default"].createElement(_input["default"], {
+      }, "+"), /*#__PURE__*/_react["default"].createElement(_input["default"], {
         onClick: this.handleDecrement
-      }, "-"), _react["default"].createElement(_input["default"], null, this.state.count));
+      }, "-"), /*#__PURE__*/_react["default"].createElement(_input2["default"], null, this.state.count));
     }
   }]);
   return Counter;

@@ -1,10 +1,12 @@
 "use strict";
 
-var _interopRequireDefault = require("@babel/runtime-corejs2/helpers/interopRequireDefault");
+var _Object$defineProperty = require("@babel/runtime-corejs2/core-js/object/define-property");
 
-var _Object$defineProperty2 = require("@babel/runtime-corejs2/core-js/object/define-property");
+var _regeneratorRuntime2 = require("@babel/runtime-corejs2/regenerator");
 
-_Object$defineProperty2(exports, "__esModule", {
+var _interopRequireDefault = require("@babel/runtime-corejs2/helpers/interopRequireDefault")["default"];
+
+_Object$defineProperty(exports, "__esModule", {
   value: true
 });
 
@@ -12,51 +14,39 @@ exports.handleGenerator = handleGenerator;
 exports.handleAsyncAwaitGenerator = handleAsyncAwaitGenerator;
 exports["default"] = exports.isExistedInString = exports.isExistedInArray = exports.cloneObject = exports.myObject = exports.cloneArray = exports.myArray = exports.mySymbol = exports.myWeakSet = exports.mySet = exports.myWeakMap = exports.myMap = exports.handleAsyncAwait = exports.handlePromise = void 0;
 
-var _defineProperty2 = _interopRequireDefault(require("@babel/runtime-corejs2/core-js/object/define-property"));
+var _regenerator = _interopRequireDefault(require("@babel/runtime-corejs2/regenerator"));
 
-var _defineProperties = _interopRequireDefault(require("@babel/runtime-corejs2/core-js/object/define-properties"));
+var _promise = _interopRequireDefault(require("@babel/runtime-corejs2/core-js/promise"));
 
-var _getOwnPropertyDescriptors = _interopRequireDefault(require("@babel/runtime-corejs2/core-js/object/get-own-property-descriptors"));
+var _map = _interopRequireDefault(require("@babel/runtime-corejs2/core-js/map"));
 
-var _getOwnPropertyDescriptor = _interopRequireDefault(require("@babel/runtime-corejs2/core-js/object/get-own-property-descriptor"));
+var _weakMap = _interopRequireDefault(require("@babel/runtime-corejs2/core-js/weak-map"));
 
-var _getOwnPropertySymbols = _interopRequireDefault(require("@babel/runtime-corejs2/core-js/object/get-own-property-symbols"));
+var _set = _interopRequireDefault(require("@babel/runtime-corejs2/core-js/set"));
 
-var _keys = _interopRequireDefault(require("@babel/runtime-corejs2/core-js/object/keys"));
+var _weakSet = _interopRequireDefault(require("@babel/runtime-corejs2/core-js/weak-set"));
+
+var _symbol = _interopRequireDefault(require("@babel/runtime-corejs2/core-js/symbol"));
+
+var _from = _interopRequireDefault(require("@babel/runtime-corejs2/core-js/array/from"));
 
 var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime-corejs2/helpers/classCallCheck"));
 
 var _createClass2 = _interopRequireDefault(require("@babel/runtime-corejs2/helpers/createClass"));
 
-var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime-corejs2/helpers/possibleConstructorReturn"));
-
-var _getPrototypeOf2 = _interopRequireDefault(require("@babel/runtime-corejs2/helpers/getPrototypeOf"));
-
 var _assertThisInitialized2 = _interopRequireDefault(require("@babel/runtime-corejs2/helpers/assertThisInitialized"));
 
 var _inherits2 = _interopRequireDefault(require("@babel/runtime-corejs2/helpers/inherits"));
 
-var _defineProperty3 = _interopRequireDefault(require("@babel/runtime-corejs2/helpers/defineProperty"));
+var _createSuper2 = _interopRequireDefault(require("@babel/runtime-corejs2/helpers/createSuper"));
+
+var _defineProperty2 = _interopRequireDefault(require("@babel/runtime-corejs2/helpers/defineProperty"));
+
+var _objectSpread2 = _interopRequireDefault(require("@babel/runtime-corejs2/helpers/objectSpread2"));
 
 var _toConsumableArray2 = _interopRequireDefault(require("@babel/runtime-corejs2/helpers/toConsumableArray"));
 
-var _from = _interopRequireDefault(require("@babel/runtime-corejs2/core-js/array/from"));
-
-var _symbol = _interopRequireDefault(require("@babel/runtime-corejs2/core-js/symbol"));
-
-var _weakSet = _interopRequireDefault(require("@babel/runtime-corejs2/core-js/weak-set"));
-
-var _set = _interopRequireDefault(require("@babel/runtime-corejs2/core-js/set"));
-
-var _weakMap = _interopRequireDefault(require("@babel/runtime-corejs2/core-js/weak-map"));
-
-var _map = _interopRequireDefault(require("@babel/runtime-corejs2/core-js/map"));
-
-var _regenerator = _interopRequireDefault(require("@babel/runtime-corejs2/regenerator"));
-
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime-corejs2/helpers/asyncToGenerator"));
-
-var _promise = _interopRequireDefault(require("@babel/runtime-corejs2/core-js/promise"));
 
 var _awaitAsyncGenerator2 = _interopRequireDefault(require("@babel/runtime-corejs2/helpers/awaitAsyncGenerator"));
 
@@ -66,13 +56,15 @@ var _react = _interopRequireDefault(require("react"));
 
 var _input = _interopRequireDefault(require("./input2"));
 
-function ownKeys(object, enumerableOnly) { var keys = (0, _keys["default"])(object); if (_getOwnPropertySymbols["default"]) { var symbols = (0, _getOwnPropertySymbols["default"])(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return (0, _getOwnPropertyDescriptor["default"])(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+var _input2 = _interopRequireDefault(require("./input3"));
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { (0, _defineProperty3["default"])(target, key, source[key]); }); } else if (_getOwnPropertyDescriptors["default"]) { (0, _defineProperties["default"])(target, (0, _getOwnPropertyDescriptors["default"])(source)); } else { ownKeys(source).forEach(function (key) { (0, _defineProperty2["default"])(target, key, (0, _getOwnPropertyDescriptor["default"])(source, key)); }); } } return target; }
+var _async = require("./async");
 
-var _marked =
-/*#__PURE__*/
-_regenerator["default"].mark(handleGenerator);
+var _marked = /*#__PURE__*/_regeneratorRuntime2.mark(handleGenerator);
+
+(0, _async.handleAsyncAwait2)();
+(0, _async.handleGenerator2)();
+(0, _async.handleAsyncAwaitGenerator2)();
 
 var handlePromise = function handlePromise() {
   return new _promise["default"](function (resolve) {
@@ -82,12 +74,8 @@ var handlePromise = function handlePromise() {
 
 exports.handlePromise = handlePromise;
 
-var handleAsyncAwait =
-/*#__PURE__*/
-function () {
-  var _ref = (0, _asyncToGenerator2["default"])(
-  /*#__PURE__*/
-  _regenerator["default"].mark(function _callee() {
+var handleAsyncAwait = /*#__PURE__*/function () {
+  var _ref = (0, _asyncToGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee() {
     var data;
     return _regenerator["default"].wrap(function _callee$(_context) {
       while (1) {
@@ -140,9 +128,7 @@ function handleAsyncAwaitGenerator() {
 }
 
 function _handleAsyncAwaitGenerator() {
-  _handleAsyncAwaitGenerator = (0, _wrapAsyncGenerator2["default"])(
-  /*#__PURE__*/
-  _regenerator["default"].mark(function _callee2() {
+  _handleAsyncAwaitGenerator = (0, _wrapAsyncGenerator2["default"])( /*#__PURE__*/_regenerator["default"].mark(function _callee2() {
     return _regenerator["default"].wrap(function _callee2$(_context3) {
       while (1) {
         switch (_context3.prev = _context3.next) {
@@ -185,26 +171,24 @@ var myObject = {
   age: 26
 };
 exports.myObject = myObject;
-
-var cloneObject = _objectSpread({}, myObject);
-
+var cloneObject = (0, _objectSpread2["default"])({}, myObject);
 exports.cloneObject = cloneObject;
 var isExistedInArray = ['a', 'b'].includes('a');
 exports.isExistedInArray = isExistedInArray;
 var isExistedInString = 'ab'.includes('a');
 exports.isExistedInString = isExistedInString;
 
-var Counter =
-/*#__PURE__*/
-function (_React$Component) {
+var Counter = /*#__PURE__*/function (_React$Component) {
   (0, _inherits2["default"])(Counter, _React$Component);
+
+  var _super = (0, _createSuper2["default"])(Counter);
 
   function Counter(props) {
     var _this;
 
     (0, _classCallCheck2["default"])(this, Counter);
-    _this = (0, _possibleConstructorReturn2["default"])(this, (0, _getPrototypeOf2["default"])(Counter).call(this, props));
-    (0, _defineProperty3["default"])((0, _assertThisInitialized2["default"])(_this), "handleDecrement", function () {
+    _this = _super.call(this, props);
+    (0, _defineProperty2["default"])((0, _assertThisInitialized2["default"])(_this), "handleDecrement", function () {
       _this.setState(function (_ref2) {
         var count = _ref2.count;
         return {
@@ -232,11 +216,11 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return _react["default"].createElement("div", null, _react["default"].createElement(_input["default"], {
+      return /*#__PURE__*/_react["default"].createElement("div", null, /*#__PURE__*/_react["default"].createElement(_input["default"], {
         onClick: this.handleIncrement
-      }, "+"), _react["default"].createElement(_input["default"], {
+      }, "+"), /*#__PURE__*/_react["default"].createElement(_input["default"], {
         onClick: this.handleDecrement
-      }, "-"), _react["default"].createElement(_input["default"], null, this.state.count));
+      }, "-"), /*#__PURE__*/_react["default"].createElement(_input2["default"], null, this.state.count));
     }
   }]);
   return Counter;

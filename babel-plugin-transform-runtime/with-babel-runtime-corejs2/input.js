@@ -1,9 +1,14 @@
 import React from 'react'
 import Button from './input2'
-import Text from './input2'
+import Text from './input3'
+import { handleAsyncAwait2, handleGenerator2, handleAsyncAwaitGenerator2 } from './async'
+
+handleAsyncAwait2()
+handleGenerator2()
+handleAsyncAwaitGenerator2()
 
 export const handlePromise = () =>
-  new Promise(resolve => {
+  new Promise((resolve) => {
     resolve('hi')
   })
 
@@ -32,7 +37,7 @@ export const myWeakSet = new WeakSet()
 
 export const mySymbol = new Symbol()
 
-export const myArray = Array.from([1, 2, 3], x => x + x)
+export const myArray = Array.from([1, 2, 3], (x) => x + x)
 
 export const cloneArray = [...myArray]
 

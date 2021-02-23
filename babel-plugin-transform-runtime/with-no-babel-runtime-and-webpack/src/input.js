@@ -1,11 +1,17 @@
+import 'regenerator-runtime/runtime'
 import React from 'react'
 import Button from './input2'
 import Text from './input3'
 import { handleAsyncAwait2, handleGenerator2, handleAsyncAwaitGenerator2 } from './async'
+import { handleAsyncAwait3, handleGenerator3, handleAsyncAwaitGenerator3 } from './async2'
 
 handleAsyncAwait2()
 handleGenerator2()
 handleAsyncAwaitGenerator2()
+
+handleAsyncAwait3()
+handleGenerator3()
+handleAsyncAwaitGenerator3()
 
 export const handlePromise = () =>
   new Promise((resolve) => {
